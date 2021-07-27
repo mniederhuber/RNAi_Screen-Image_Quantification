@@ -1,0 +1,15 @@
+name: image-processing
+channels:
+- conda-forge
+dependencies:
+- python=3.9
+- napari=0.4.10
+- numpy=1.21.0
+- scipy=1.7.0
+- matplotlib=3.4.2
+- jupyter
+- notebook
+- pandas=1.3.0
+- ipython
+- scikit-image=0.18.2
+- xarray=0.18.2

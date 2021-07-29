@@ -73,14 +73,15 @@ for sample_id in sample_sheet_LL['id']:
         sample = sample_id
         stack = im.shape[2]        
         if im.shape[1] == 3:
-            dapi = np.max(im.data[:,0,:,:,:], axis = 0)
-            gfp = np.max(im.data[:,1,:,:,:], axis = 0)
-            brDisc = np.max(im.data[:,2,:,:,:], axis = 0)
-
-            dapi_gauss = filters.gaussian(dapi, sigma = 4)
+            dapi = np.amax(im.data[:,0,:,:,:], axis = 1)
+            gfp = np.amax(im.data[:,1,:,:,:], axis = 1)
+            brDisc = np.amax(im.data[:,2,:,:,:], axis = 1)
+            
+            print(dapi.shape)
+            dapi_gauss = filters.gaussian(dapi, sigma = 5)
             dapi_mask = dapi_gauss >= filters.threshold_otsu(dapi_gauss)
 
-            gfp_gauss = filters.gaussian(gfp, sigma = 4)
+            gfp_gauss = filters.gaussian(gfp, sigma = 5)
             gfp_mask = gfp_gauss >= filters.threshold_otsu(gfp_gauss)             
 
             gfpNEG_mask = np.array(np.subtract(dapi_mask, gfp_mask, dtype = np.float), dtype = bool)

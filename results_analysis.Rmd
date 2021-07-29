@@ -1,0 +1,46 @@
+
+```{r}
+library(magrittr)
+library(ggplot2)
+library(viridis)
+```
+
+```{r}
+outdata <- read.csv('output/outdata.csv')
+    
+    size = dplyr::case_when("1024" %in% shape ~ "1024x1024",
+outdata %>% dplyr::filter(symbol == 'Snr1')
+
+```
+
+```{r}
+outdata %>%
+  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::summarise(m = mean(KDtoWT)) %>%
+  ggplot(aes(line, symbol, color = m)) +
+  geom_point(size = 6) +
+  scale_color_viridis(option = "turbo")
+
+
+outdata %>%
+  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::summarise(m = mean(KDtoWT)) %>%
+  ggplot(aes(line, symbol, fill = m)) +
+  geom_point(size = 6, shape = 21) +
+  scale_fill_gradientn(limits = c(0,3), colors = c("blue","white","red","red"), name = "KD/WT brDisc") +
+  xlab("RNAi Line") +
+  coord_cartesian(clip = "off") +
+  theme(axis.text.y = element_text(size = 12),
+        panel.background = element_rect(fill = NA),
+        panel.grid.major.y = element_line(color = "grey10"),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.title = element_text(),
+        legend.position = "bottom") 
+
+```
+

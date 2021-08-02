@@ -55,6 +55,7 @@ outdata = {
     'brDisc_gfpNEG' : [],
     'KDtoWT' : []
 }
+
 n = 0
 for sample_id in sample_sheet_LL['id']:
     percent_complete = round(100*(n/len(sample_sheet_LL.id)), 2)
@@ -87,12 +88,15 @@ for sample_id in sample_sheet_LL['id']:
             
            # print(dapi.shape)
             dapi_gauss = filters.gaussian(dapi, sigma = 5)
-            dapi_mask = dapi_gauss >= filters.threshold_otsu(dapi_gauss)
+            dapi_mask = dapi_gauss > 0.1
+            #dapi_mask = dapi_gauss >= filters.threshold_otsu(dapi_gauss)
 
             gfp_gauss = filters.gaussian(gfp, sigma = 5)
-            gfp_mask = gfp_gauss >= filters.threshold_otsu(gfp_gauss)             
+            gfp_cut = np.where(dapi_mask == False, 0, gfp_gauss)
+            gfp_mask = gfp_cut >= 0.1 
+            #gfp_mask = gfp_gauss >= filters.threshold_otsu(gfp_gauss)             
 
-            gfpNEG_mask = np.array(np.subtract(dapi_mask, gfp_mask, dtype = float), dtype = bool)
+            gfpNEG_mask = np.array(np.subtract(gfp_mask, dapi_mask, dtype = float), dtype = bool)
 
             brDisc_gfp = np.zeros_like(brDisc)
             brDisc_gfp[gfp_mask] = brDisc[gfp_mask]
@@ -128,11 +132,6 @@ for sample_id in sample_sheet_LL['id']:
 
 df = pd.DataFrame(outdata)
 pd.DataFrame.to_csv(df, 'output/outdata.csv')
-
-
-
-
-
 
 
 

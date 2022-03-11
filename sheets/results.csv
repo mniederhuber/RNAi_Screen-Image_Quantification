@@ -1,0 +1,144 @@
+Line,Symbol,shift_29C_dAEL,lethality,non_CyO_WingPhenotype,wing_phenotype_cat,Date_Imaged,br_activity,increase,homozygous,status
+31340,Acf,4,none,WT,WT,5/27/21,WT,WT,TRUE,tested
+31340,Acf,4,low,WT,WT,NA,NA,NA,TRUE,tested
+31340,Acf,4,low,"mostly WT with few with very small ectopic vein cells along L2 (hard to find), some male have no-pigment patches between L1-L2, L2-L3",weak,NA,NA,NA,TRUE,tested
+42651,Act5C,5,high,NA,NA,3/23/21,WT,WT,TRUE,tested
+42651,Act5C,5,high,NA,NA,NA,NA,NA,TRUE,tested
+31347,Ada2b,4,none,WT (n = 1),WT,2/28/21,WT,WT,TRUE,tested
+33009,Arp5,4,none,"small ectopic vein spots along L2, seems like same spot distal 1/3 of L2 on all wings, 1 male more severe with a couple spots",mild,5/12/21,WT,WT,TRUE,tested
+33009,Arp5,4,none,Small ectopic veins around distal L2,mild,NA,NA,NA,TRUE,tested
+31202,Arp8,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+32890,Atac2,4,none,WT,WT,2/24/21,WT,WT,TRUE,tested
+53918,Atac2,4,none,WT,WT,5/27/21,"only 2 wings - both seemingly WT signal, morphology is abnormal. One wing has higher signal in presumptive L3",partial,TRUE,repeat
+53918,Atac2,NA,low,"only 1 found - shrunken anterior, incomplete L2 that seems to fork -- other adults sutck in food",moderate,NA,NA,NA,TRUE,tested
+31086,Atac3,4,none,WT,WT,2/17/21,WT,WT,TRUE,tested
+31154,Atac3,5,NA,NA,NA,4/23/21,WT,WT,TRUE,tested
+31154,Atac3,4,none,WT,WT,NA,NA,NA,TRUE,tested
+26218,Bap111,4,high,NA,NA,2/17/21,Increased,strong,TRUE,tested
+26218,Bap111,2,high,NA,NA,3/26/21,Increased,strong,TRUE,tested
+26218,Bap111,3,high,NA,NA,3/26/21,Increased,strong,TRUE,tested
+v104361,Bap111,NA,NA,NA,NA,NA,NA,NA,NA,untested
+31708,Bap55,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+42847,Bicra,4,none,WT,WT,7/7/21,increased,strong,TRUE,tested
+32505,Bicra,NA,NA,NA,NA,NA,NA,NA,TRUE,untested
+42658,Brd8,NA,NA,NA,NA,NA,NA,NA,NA,untested
+67308,Brd8,NA,NA,NA,NA,NA,NA,NA,NA,untested
+34520,brm,2,low,WT - didn't look closely for pigment defect,WT,3/26/21,WT,WT,TRUE,tested
+31712,brm,4,high,"wings are heldout, smaller anterior, normalish veins with some subtle defects, some ectopic bristles on back",strong,5/27/21,strongly increased,strong,TRUE,tested
+34520,brm,4,none,WT,WT,NA,NA,NA,TRUE,tested
+34520,brm,3,low,mostly WT - some male have distal no-pigment patches intervien L2/L3,WT,NA,NA,NA,TRUE,tested
+31714,Caf1-55,4,high,NA,NA,5/27/21,WT,WT,TRUE,tested
+34069,Caf1-55,NA,NA,NA,NA,NA,NA,NA,FALSE,MISSING
+31962,CG12659,4,none,WT,WT,5/6/21,WT (n=1),WT,TRUE,repeat
+31962,CG12659,4,none,WT,WT,NA,NA,NA,TRUE,tested
+34665,Chd1,NA,none,minor vein spots (similar to 33708),mild,5/12/21,WT,WT,TRUE,tested
+34665,Chd1,NA,low,infrequent very small ectopic veinlets around L2,mild,NA,NA,NA,TRUE,tested
+58248,Chd1,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+63658,Chrac-16,5,low,WT,WT,1/28/21,WT,WT,TRUE,tested
+63658,Chrac-16,4,NA,NA,NA,3/17/21,WT,WT,TRUE,tested
+65062,D12,4,NA,NA,NA,3/17/21,WT,WT,TRUE,tested
+60872,D12,4,none,3/4 have an ectopic vein between L2-L3,moderate,6/3/21,WT,WT,TRUE,tested
+55917,dom,4,low,small ectopic veins paralell to L2 - mid distal typically -- less severe than 40914,mild,3/17/21,Subtle increase - some cells highly increased,mild,TRUE,tested
+34827,dom,4,high,NA,NA,3/31/21,Increased,strong,TRUE,tested
+38941,dom,4,high,subtle ectopic veins and vein formation defects,mild,3/31/21,increased,strong,TRUE,tested
+40914,dom,4,low,"L2 defects, ectopic ACV? ",moderate,3/31/21,increased,strong,TRUE,tested
+41674,dom,4,high,NA,NA,3/31/21,increased,strong,TRUE,tested
+55917,dom,4,low,ectopic veins,moderate,3/31/21,increased,mild,TRUE,tested
+34827,dom,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+38385,dom,NA,high,NA,NA,NA,NA,NA,TRUE,untested
+38385,dom,4,high,NA,NA,NA,NA,NA,TRUE,untested
+38941,dom,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+38941,dom,3,high,"more severe, cv defects, intervien -> vein conversion",moderate,NA,NA,NA,TRUE,tested
+40914,dom,NA,low,"blistering in posterior, blistering anterior intervien L2-L3, ectopic crossveins L1-L2 distal, L2-L3 proximal ",moderate,NA,NA,NA,TRUE,tested
+40914,dom,3,high,"ectopic CVs L2-L3, ectopic veins, mishapen, wings appear non-functional, held out",severe,NA,NA,NA,TRUE,tested
+41674,dom,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+55917,dom,3,high,"more severe, ectopic veins, incomplete L2",severe,NA,NA,NA,TRUE,tested
+31960,Dsp1,4,none,WT,WT,2/28/21,WT,WT,TRUE,tested
+26225,dve,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+33658,E(bx),4,low,WT,WT,3/4/21,Maybe Decreased?,negative,TRUE,tested
+33891,Etl1,4,none,WT,WT,3/4/21,WT,WT,TRUE,tested
+33981,Gcn5,4,none,WT,WT,3/4/21,WT,WT,TRUE,tested
+32453,Hcf,NA,NA,NA,NA,NA,NA,NA,FALSE,MISSING
+33666,Hel25E,4,high,NA,NA,NA,NA,NA,TRUE,untested
+33666,Hel25E,NA,NA,NA,NA,NA,NA,NA,TRUE,untested
+61858,Hers,4,none,some with intervein to vein convsersion,moderate,6/3/21,WT,WT,TRUE,tested
+77429,HmgD,4,none,WT,WT,6/3/21,WT,WT,TRUE,tested
+26219,HmgZ,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+33708,Ino80,5,low,WT,WT,1/28/21,WT,WT,TRUE,tested
+33708,Ino80,NA,none,"minor vein spots between L1-L2, not present in 100% many WT in appearance",mild,5/12/21,WT,WT,TRUE,tested
+33708,Ino80,NA,NA,NA,NA,NA,NA,NA,TRUE,tested
+31111,ISWI,4,low,"mostly WT, 1 found with small ectopic vein tissue anterior to L2, **w- cyo found",weak,5/27/21,"mostly WT, or slightly decreased",WT,TRUE,tested
+32845,ISWI,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+26184,Jarid2,4,low,WT,WT,2/17/21,WT,WT,TRUE,tested
+32891,Jarid2,NA,low,mostly WT - a few with a subtle small ectopic vein patches along L2 - hard to find,mild,5/6/21,~WT -- few single cells with higher expression,WT,TRUE,tested
+32891,Jarid2,4,none,WT,WT,NA,NA,NA,TRUE,tested
+34908,kis,NA,none,"essentially WT, maybe some males have very subtly darker intervein cell patches distal between L2-L3",WT,5/12/21,WT,WT,TRUE,tested
+34908,kis,4,none,WT,WT,NA,NA,NA,TRUE,tested
+28944,lid,5,NA,NA,NA,4/23/21,WT,WT,TRUE,tested
+28944,lid,4,none,WT - 1 had slightly curled wing on one wing,WT,NA,NA,NA,TRUE,tested
+33419,Mi-2,4,high,WT,WT,6/17/21,WT,WT,TRUE,tested
+33419,Mi-2,4,high,WT,WT,6/17/21,WT,WT,TRUE,tested
+51774,Mi-2,4,low,"mostly WT, some subtle IV->V conversion",weak,6/17/21,WT,WT,TRUE,tested
+34919,mor,6,high,?*,NA,4/22/21,Increased,strong,TRUE,tested
+v6969,mor,4,high,NA,NA,7/14/21,increased,strong,TRUE,tested
+34919,mor,5,high,NA,NA,NA,NA,NA,TRUE,tested
+34919,mor,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+v110712,mor,NA,NA,NA,NA,NA,NA,NA,NA,untested
+33745,MTA1-like,4,low,"mostly WT, some ectopic L3 parallel to endogenous L3, some IV V conversion",mild,6/17/21,subtle increase,mild,TRUE,tested
+34624,MTA1-like,4,none,"mostly WT, some ectopic L3 parallel to endogenous L3, some IV V conversion",mild,7/14/21,subtle increase,mild,TRUE,tested
+34905,MTA1-like,NA,NA,NA,NA,NA,NA,NA,NA,untested
+32941,Mtor,4,high,NA,NA,5/6/21,strongly increased **in older wings increase is lower/gone rel to posterior,strong,TRUE,tested
+32941,Mtor,4,high,NA,NA,NA,NA,NA,TRUE,tested
+v330679,Mtor,NA,NA,NA,NA,NA,NA,NA,NA,untested
+57421,NC2beta,4,none,WT,WT,3/17/21,Decreased,negative,TRUE,tested
+31255,Nipped-A,NA,NA,NA,NA,NA,NA,NA,NA,untested
+34849,Nipped-A,NA,NA,NA,NA,NA,NA,NA,NA,untested
+33688,Nlp,4,low,Males - small light color patches between L2 and L3 - Females WT?,mild,3/4/21,WT,WT,TRUE,tested
+51021,Nph,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+30504,Nup153,4,none,WT,WT,2/17/21,WT,WT,TRUE,tested
+32837,Nup153,4,low,WT,WT,5/5/21,,WT,TRUE,tested
+32837,Nup153,4,none,Majority WT - a few have very small ectopic veins around L2,mild,NA,NA,NA,TRUE,tested
+31341,Nurf-38,4,high,NA,NA,5/5/21,WT,WT,TRUE,tested
+31341,Nurf-38,4,high,NA,NA,NA,NA,NA,TRUE,tested
+33707,okr,4,none,WT,WT,3/4/21,WT,WT,TRUE,tested
+31266,osa,5,high,NA,NA,3/23/21,WT,WT,TRUE,tested
+31266,osa,5,high,NA,NA,3/26/21,Strongly Increased,strong,TRUE,tested
+31266,osa,5,NA,NA,NA,4/21/21,Increased,strong,TRUE,tested
+31266,osa,5,NA,NA,NA,4/23/21,Increased,strong,TRUE,tested
+38285,osa,4,none,can't easily determine with het genotype,NA,4/23/21,WT,WT,FALSE,tested
+31266,osa,4,NA,NA,NA,5/4/21,Still increased in later folded wings,strong,TRUE,tested
+v330350,osa,4,high,NA,NA,7/14/21,increased,strong,TRUE,tested
+31266,osa,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+31266,osa,5,high,NA,NA,NA,NA,NA,TRUE,tested
+v7810,osa,NA,NA,NA,NA,NA,NA,NA,NA,untested
+34585,P32,4,low,WT,WT,3/4/21,WT,WT,TRUE,tested
+31609,pho,4,low,A few with very small ectopic veins around L2,weak,2/28/21,WT,WT,TRUE,tested
+32840,polybromo,5,low,WT,WT,1/28/21,WT,WT,TRUE,tested
+32840,polybromo,4,low,WT,WT,2/17/21,WT,WT,TRUE,tested
+32840,polybromo,2,low,WT,WT,3/26/21,WT,WT,TRUE,tested
+32840,polybromo,3,low,WT,WT,NA,NA,NA,TRUE,tested
+50972,pont,5,high,WT,WT,1/28/21,Decreased,negative,TRUE,tested
+50972,pont,NA,low,"some WT, some splotchy pigment anterior around L2, ectopic veins between L3-L4 throuh pcv",mild,NA,NA,NA,TRUE,untested
+50972,pont,5,NA,NA,NA,NA,NA,NA,TRUE,untested
+50972,pont,4,NA,NA,NA,NA,NA,NA,TRUE,untested
+38261,Psc,NA,NA,NA,NA,NA,NA,NA,FALSE,untested
+32415,rept,NA,NA,NA,NA,NA,NA,NA,TRUE,untested
+39000,Sgf29,4,low,WT,WT,NA,NA,NA,TRUE,untested
+39000,Sgf29,4,none,"WT, 1 has small ectopic veinlet **some w- cyo flies found in prog",mild,NA,NA,NA,TRUE,untested
+67929,Snr1,5,low,"mostly WT - some female small ectopic vein by L2, some male with pigment loss L2/L3 intervein",WT,3/17/21,WT,WT,TRUE,tested
+67929,Snr1,4,low,"mostly WT - some female small ectopic vein by L2, some male with pigment loss L2/L3 intervein",WT,3/17/21,WT,WT,TRUE,tested
+67929,Snr1,3,low,"mostly WT - some female small ectopic vein by L2, some male with pigment loss L2/L3 intervein",WT,3/17/21,WT,WT,TRUE,tested
+32372,Snr1,5,high,NA,NA,3/23/21,WT,WT,TRUE,tested
+32372,Snr1,5,high,NA,NA,6/17/21,"increased, specifically in L1",strong,TRUE,tested
+v108599,Snr1,4,high,NA,NA,7/14/21,increased,strong,TRUE,tested
+32372,Snr1,NA,high,NA,NA,NA,NA,NA,TRUE,tested
+32372,Snr1,5,high,NA,NA,NA,NA,NA,TRUE,tested
+32853,su(var)3-3,4,low,WT,WT,3/31/21,"Increased, subtle - strong single cell increases",partial,TRUE,tested
+26744,TFAM,4,none,WT,WT,2/17/21,WT,WT,TRUE,tested
+57742,TFAM,4,none,WT,WT,3/17/21,WT n =1,WT,TRUE,tested
+28563,Tip60,4,high,NA,NA,6/3/21,partial increase,mild,TRUE,tested
+55314,Top1,4,high,NA,NA,5/27/21,only 3 wings - 2 have different regions of developing L1/margin that are strongly increased - but not whole vein? And not consistent phenotype between wings?,partial,TRUE,repeat
+55314,Top1,NA,high,"splotchy pigmentation distal, some small ectopic veins",mild,NA,NA,NA,TRUE,tested
+31637,tou,4,none,WT,WT,2/24/21,decreased,negative,TRUE,tested
+32952,wds,4,high,NA,NA,6/3/21,WT (n=1 wing) - maybe few cells increased,WT,TRUE,repeat
+32952,wds,4,high,NA,NA,NA,NA,NA,TRUE,tested

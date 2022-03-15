@@ -77,15 +77,15 @@ outdata = {
 
 n = 0
 for sample_id in imgDF['sampleID']:
-    percent_complete = round(100*(n/len(imgDF.sampleID)), 2)
-    print(f"{percent_complete}% complete")
+    #percent_complete = round(100*(n/len(imgDF.sampleID)), 2)
+    #print(f"{percent_complete}% complete")
 
     #get image id variables
     line = imgDF.loc[imgDF['sampleID'] == sample_id, 'Line'].iloc[0]
     date = imgDF.loc[imgDF['sampleID'] == sample_id, 'Date'].iloc[0]
     fp = imgDF.loc[imgDF['sampleID'] == sample_id, 'fPath'].iloc[0]
     symbol = imgDF.loc[imgDF['sampleID'] == sample_id, 'Symbol'].iloc[0]
-    print(fp) 
+	
     #load image 
     im = AICSImage(fp)
    

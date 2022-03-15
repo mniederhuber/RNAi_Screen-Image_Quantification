@@ -10,3 +10,5 @@ Line,Symbol,...
 ```
 - Edit `imageParser.py` to specify the `input sheet` path and `image directory` path
 - Run `imgParser.py` 
+
+- `conda activate image-processing'

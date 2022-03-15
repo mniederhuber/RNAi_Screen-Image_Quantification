@@ -10,5 +10,5 @@ dependencies:
   - scikit-image=0.18.2
   - xarray=0.18.2
   - pip:
-    - aicsimageio==3.2.1 
+    - aicsimageio==4.6.3
     - readlif>=0.6.4

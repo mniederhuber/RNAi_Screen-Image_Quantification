@@ -1,0 +1,336 @@
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Act5C_42651_210323_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Act5C_42651_210323_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/Act5C_42651_210323_Series003_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:144: UserWarning: output/maxProj/Act5C_42651_210323_Series003_DAPI_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_DAPI_MAX.tiff", dapi)
+scripts/imgParser.py:145: UserWarning: output/mask/Act5C_42651_210323_Series003_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Act5C_42651_210323_Series003_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:141: UserWarning: output/maxProj/osa_31266_210503_Series002_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_31266_210503_Series002_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:141: UserWarning: output/maxProj/osa_31266_210503_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_31266_210503_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:141: UserWarning: output/maxProj/osa_31266_210503_Series007_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_31266_210503_Series007_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/osa_38285_210423_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_38285_210423_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/osa_38285_210423_Series004_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:144: UserWarning: output/maxProj/osa_38285_210423_Series004_DAPI_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_DAPI_MAX.tiff", dapi)
+scripts/imgParser.py:145: UserWarning: output/mask/osa_38285_210423_Series004_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/osa_38285_210423_Series004_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/osa_31266_210423_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_31266_210423_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/osa_31266_210423_Series004_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/TFAM_26744_210217_Series001_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/TFAM_26744_210217_Series001_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/TFAM_26744_210217_Series001_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:145: UserWarning: output/mask/TFAM_26744_210217_Series001_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/TFAM_26744_210217_Series001_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/TFAM_26744_210217_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/TFAM_26744_210217_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/TFAM_26744_210217_Series003_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Nup153_30504_210217_Series002_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Nup153_30504_210217_Series002_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Nup153_30504_210217_Series002_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:141: UserWarning: output/maxProj/Nup153_30504_210217_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Nup153_30504_210217_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:141: UserWarning: output/maxProj/Nup153_30504_210217_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Nup153_30504_210217_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:141: UserWarning: output/maxProj/Nup153_30504_210217_Series005_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Nup153_30504_210217_Series005_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Atac3_31086_210217_Series001_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Atac3_31086_210217_Series001_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Atac3_31086_210217_Series001_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Bap111_26218_210217_Series002_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Bap111_26218_210217_Series002_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Bap111_26218_210217_Series002_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/pho_31609_210228_Series002_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/pho_31609_210228_Series002_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/pho_31609_210228_Series002_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:145: UserWarning: output/mask/pho_31609_210228_Series002_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/pho_31609_210228_Series002_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/pho_31609_210228_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/pho_31609_210228_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/pho_31609_210228_Series004_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:141: UserWarning: output/maxProj/Top1_55314_210527_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Top1_55314_210527_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/NC2beta_57421_210317_Series001_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/NC2beta_57421_210317_Series001_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/NC2beta_57421_210317_Series001_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Jarid2_32891_210506_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Jarid2_32891_210506_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/Jarid2_32891_210506_Series003_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:144: UserWarning: output/maxProj/Jarid2_32891_210506_Series003_DAPI_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_DAPI_MAX.tiff", dapi)
+scripts/imgParser.py:145: UserWarning: output/mask/Jarid2_32891_210506_Series003_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Jarid2_32891_210506_Series003_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:141: UserWarning: output/maxProj/CG12659_31962_210506_Series002_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/CG12659_31962_210506_Series002_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Mtor_32941_210506_Series003_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Mtor_32941_210506_Series003_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:143: UserWarning: output/mask/Mtor_32941_210506_Series003_GFPNEG-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFPNEG-MASK_MAX.tiff", img_as_ubyte(gfpNEG_mask))
+scripts/imgParser.py:144: UserWarning: output/maxProj/Mtor_32941_210506_Series003_DAPI_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_DAPI_MAX.tiff", dapi)
+scripts/imgParser.py:145: UserWarning: output/mask/Mtor_32941_210506_Series003_DAPI-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_DAPI-MASK_MAX.tiff", img_as_ubyte(dapi_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Mtor_32941_210506_Series003_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:138: RuntimeWarning: invalid value encountered in double_scalars
+  KDtoWT = brDisc_gfp_signal / brDisc_gfpNEG_signal
+scripts/imgParser.py:141: UserWarning: output/maxProj/Mtor_32941_210506_Series004_GFP_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_GFP_MAX.tiff", gfp)
+scripts/imgParser.py:142: UserWarning: output/mask/Mtor_32941_210506_Series004_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+scripts/imgParser.py:146: UserWarning: output/maxProj/Mtor_32941_210506_Series004_brDisc_MAX.tiff is a low contrast image
+  io.imsave(f"output/maxProj/{sample}_{scene}_brDisc_MAX.tiff", brDisc)
+scripts/imgParser.py:142: UserWarning: output/mask/osa_31266_210504_Series005_GFP-MASK_MAX.tiff is a low contrast image
+  io.imsave(f"output/mask/{sample}_{scene}_GFP-MASK_MAX.tiff", img_as_ubyte(gfp_mask))
+0.0% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210323/32372.lif
+1.27% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210323/42651.lif
+2.53% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210323/31266/31266.lif
+3.8% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210505/31341.lif
+5.06% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210505/32837.lif
+6.33% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210422/34919/34919.lif
+7.59% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210128/33708.lif
+8.86% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210128/63658.lif
+10.13% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210128/50972.lif
+11.39% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210128/32840.lif
+12.66% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/55917.lif
+13.92% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/32853/32853.lif
+15.19% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/40914/40914.lif
+16.46% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/38941/38941.lif
+17.72% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/34827/34827.lif
+18.99% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210331/41674/41674.lif
+20.25% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210603/61858.lif
+21.52% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210603/77429.lif
+22.78% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210603/60872.lif
+24.05% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210603/32952.lif
+25.32% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210603/28563/28563.lif
+26.58% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210503_31266_3LW/31266_3LW.lif
+27.85% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210512/33009.lif
+29.11% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210512/33708.lif
+30.38% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210512/34908.lif
+31.65% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210512/34665.lif
+32.91% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/33688.lif
+34.18% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/33891.lif
+35.44% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/33981.lif
+36.71% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/34585.lif
+37.97% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/33658.lif
+39.24% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210304/33707.lif
+40.51% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210423/28944.lif
+41.77% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210423/31154.lif
+43.04% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210423/38285/38285.lif
+44.3% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210423/31266/31266.lif
+45.57% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210617/33419_6-16dissect.lif
+46.84% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210617/33419_6-16dissect.lif
+48.1% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210617/32372_late_6-15dissect.lif
+49.37% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210617/51774_6-16dissect.lif
+50.63% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210617/33745_6-15dissect.lif
+51.9% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210421/31266.lif
+53.16% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/26744.lif
+54.43% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/30504.lif
+55.7% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/32840.lif
+56.96% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/31086.lif
+58.23% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/26218/26218.lif
+59.49% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210217/26184/26184.lif
+60.76% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210707/42847.lif
+62.03% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210228/31347.lif
+63.29% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210228/31609.lif
+64.56% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210228/31960.lif
+65.82% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/53918.lif
+67.09% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/55314.lif
+68.35% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/31111.lif
+69.62% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/31714.lif
+70.89% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/31340.lif
+72.15% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210527/31712/31712.lif
+73.42% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/57421.lif
+74.68% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/67929_0308.lif
+75.95% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/63658.lif
+77.22% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/57742.lif
+78.48% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/67929_0308.lif
+79.75% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/65062.lif
+81.01% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/67929_0308.lif
+82.28% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210317/55917/55917.lif
+83.54% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210326/26218_1-2.lif
+84.81% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210326/34520_1-2.lif
+86.08% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210326/26218_1-2.lif
+87.34% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210326/31266/31266.lif
+88.61% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210326/32840/32840_1-2.lif
+89.87% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210714/v6969.lif
+91.14% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210714/v330350.lif
+92.41% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210714/v108599.lif
+93.67% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210714/34624.lif
+94.94% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210506/32891.lif
+96.2% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210506/31962.lif
+97.47% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210506/32941/32941.lif
+98.73% complete
+/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/images/210504_31266_old/31266_old.lif

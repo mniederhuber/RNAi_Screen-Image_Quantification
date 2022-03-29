@@ -10,7 +10,8 @@ from skimage import filters, io, morphology, feature, img_as_ubyte
 from skimage.measure import label, regionprops
 from tifffile import imsave, imread
 
-image_directory = 'imgsTEMP'
+#to do - make a config file that has these variables so nothing has to be changed in the python code
+image_directory = 'images'
 input_sheet = 'sheets/results.csv'
 
 def makeLineDic(sheet):
@@ -21,56 +22,44 @@ def makeLineDic(sheet):
 	return lut
 
 def getMeta(imgDir, lineLUT):
+	print('building meta...')
 	for root, dirs, files in os.walk(imgDir):
 		for f in files:
 			if '.lif' in f and '.lifext' not in f and 'E93' not in f:
 				if '_' in root:
-					fp = os.path.abspath(os.path.join(root,f))
 					date = root.split('/')[1].split('_')[0]
-					line = f.split('_')[0]
-					symbol = lineLUT[line]
-					sampleID = '_'.join([symbol,line,date])
-					image = AICSImage(fp)
-					yield {
-						'line' : line,
-						'symbol' : symbol,
-						'date' : date,
-						'sampleID' : sampleID,
-						'fp' : fp,
-						'image' : image,
-					}
-				elif '_' in f:
-					fp = os.path.abspath(os.path.join(root,f))
-					date = root.split('/')[1]
-					line = f.split('_')[0]
-					row = [line,date,fp]
-					symbol = lineLUT[line]
-					sampleID = '_'.join([symbol,line,date])
-					image = AICSImage(fp)
-					yield {
-						'line' : line,
-						'symbol' : symbol,
-						'date' : date,
-						'sampleID' : sampleID,
-						'fp' : fp,
-						'image' : image,
-					}
 				else:
-					fp = os.path.abspath(os.path.join(root,f))
 					date = root.split('/')[1]
+				if '_' in f:
+					line = f.split('_')[0]
+				else:
 					line = f.split('.')[0]
-					row = [line,date,fp]
-					symbol = lineLUT[line]
-					sampleID = '_'.join([symbol,line,date])
-					image = AICSImage(fp)
-					yield {
-						'line' : line,
-						'symbol' : symbol,
-						'date' : date,
-						'sampleID' : sampleID,
-						'fp' : fp,
-						'image' : image,
-					}
+				symbol = lineLUT[line]
+				sampleID = '_'.join([symbol,line,date])
+				fp = os.path.abspath(os.path.join(root,f))
+
+#This currently doesn't work correctly because existing results file gets overwritten 
+#if file is skipped
+#				if os.path.exists('output/resultsDF.csv'):
+#					results =	pd.read_csv('output/resultsDF.csv')
+#					print(sampleID)
+#					if sampleID in list(results['sampleID']):
+#						print('file previously processed - skipping')
+#						continue
+#				else:
+#					print('new file')				
+
+				image = AICSImage(fp)
+			
+				yield {
+					'line' : line,
+					'symbol' : symbol,
+					'date' : date,
+					'sampleID' : sampleID,
+					'fp' : fp,
+					'image' : image,
+				}
+
 
 def getScene(metas):
 		for sample in metas:
@@ -88,6 +77,9 @@ def quantify(samples):
 				sampleID = sample['sampleID']
 				stack = image.shape[2]        
 				size = f"{image.shape[3]}x{image.shape[4]}"
+
+				print(f'processing {sampleID}')
+
 			#check that scene has all 3 channels (DAPI, GFP, tdTomato)
 				if image.shape[1] == 3:
 		
@@ -147,6 +139,7 @@ def quantify(samples):
 						}
 
 def writeOut(results):
+		print('writing masks...')
 		for result in results:
 				io.imsave(f"output/maxProj/{result['sampleID']}_{result['scene']}_GFP_MAX.tiff", result['GFP_MAX'])
 				io.imsave(f"output/mask/{result['sampleID']}_{result['scene']}_GFP-MASK_MAX.tiff", result['GFP-mask'])

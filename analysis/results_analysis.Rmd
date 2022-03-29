@@ -1,62 +1,124 @@
 
-```{r}
+```{r setup}
 library(magrittr)
 library(ggplot2)
 library(viridis)
 ```
 
-```{r}
-outdata <- read.csv('output/outdata.csv') %>%
-  dplyr::mutate(id = paste(symbol, line, sep = "_"))
+```{r sheet_prep}
+brm_complex <- c('Bap111','brm','mor','Snr1')
+pbap_complex <- c('polybromo', 'bap170')
+bap_complex <- c('osa')
 
-```
+dom_complex <- c('dom','Tip60','pont', 'rept','Nipped-A','Brd8')
 
-```{r}
-forcats::fct_reorder(outdata$line, outdata$KDtoWT)
-
-outdata %>%
-  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
-  dplyr::group_by(symbol, line) %>%
-  dplyr::summarise(m = mean(KDtoWT)) %>%
-  ggplot(aes(line, symbol, color = m)) +
-  geom_point(size = 6) +
-  scale_color_viridis(option = "turbo")
+outdata <- read.csv('../output/resultsDF.csv') %>%
+  dplyr::mutate(id = paste(symbol, line, sep = "_"),
+                complex = dplyr::case_when(symbol %in% brm_complex ~ '(p)bap',
+                                           symbol %in% pbap_complex ~ 'pbap',
+                                           symbol %in% bap_complex ~ 'bap',
+                                           T ~ 'other')) 
 
 
-
-outdata %>%
-  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
-  dplyr::group_by(symbol, line) %>%
-  dplyr::summarise(m = mean(KDtoWT)) %>%
-  ggplot(aes(line, symbol, fill = m)) +
-  geom_point(size = 6, shape = 21) +
-  scale_fill_gradientn(limits = c(0,3), colors = c("blue","white","yellow","red","magenta"), name = "KD/WT brDisc") +
-  xlab("RNAi Line") +
-  coord_cartesian(clip = "off") +
-  theme(axis.text.y = element_text(size = 12),
-        panel.background = element_rect(fill = NA),
-        panel.grid.major.y = element_line(color = "grey10"),
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.title.y = element_blank(),
-        legend.title = element_text(),
-        legend.position = "bottom") 
-
-```
-
-```{r}
 outdata
+```
+
+
+```{r plot-results-brm-complex}
+color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
+outdata %>%
+  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::mutate(med = median(KDtoWT)) %>%
+  ggplot(aes(KDtoWT, forcats::fct_reorder(id, KDtoWT))) +
+  geom_vline(xintercept = 1, color = "grey50") +
+  geom_boxplot(aes(fill = complex), outlier.shape = NA) +
+  scale_y_discrete(position = 'right') +
+  scale_x_continuous(trans = "log2") +
+  scale_fill_manual(values = color_scale) +
+  xlab("log2(KD/WT)") +
+  ylab("brDisc KD/WT") +
+  theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+#        legend.position = "none",
+        axis.text.y = element_text(size = 10),
+        axis.title.y = element_blank())
+
+ggsave('r_out/kd_wt-brmComplex-plot.png', width = 7, height = 9)
+
+```
+
+```{r plot-results-brm-complex-V2}
+color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
 outdata %>%
   dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
   dplyr::group_by(symbol, line) %>%
   dplyr::mutate(med = median(KDtoWT)) %>%
   ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
-  geom_boxplot(aes(fill = med), outlier.shape = NA) +
-  #geom_point(size = 1, shape = 22, fill = "white") +
-  scale_fill_viridis(name = "Median\nKD/WT") +
-  ylab("brDisc KD/WT") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+  geom_hline(yintercept = 1, color = "grey50") +
+  geom_boxplot(aes(fill = complex), outlier.shape = NA) +
+ # scale_y_discrete(position = 'right') +
+  scale_y_continuous(trans = "log2") +
+  scale_fill_manual(values = color_scale) +
+  ylab("log2(KD/WT)") +
+  xlab("brDisc KD/WT") +
+  theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+#        legend.position = "none",
+        axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
         axis.title.x = element_blank())
+
+ggsave('r_out/kd_wt-brmComplex-horizontal-plot.png', width = 11, height = 7)
+
 ```
+```{r}
+
+
+
+color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
+outdata %>%
+  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::mutate(med = median(KDtoWT)) %>%
+  ggplot(aes(forcats::fct_reorder(symbol, KDtoWT), KDtoWT)) +
+  geom_hline(yintercept = 1, color = "grey50") +
+  geom_boxplot(aes(fill = complex), outlier.shape = NA) +
+ # scale_y_discrete(position = 'right') +
+  scale_y_continuous(trans = "log2") +
+  scale_fill_manual(values = color_scale) +
+  ylab("log2(KD/WT)") +
+  xlab("brDisc KD/WT") +
+  theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+#        legend.position = "none",
+        axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
+        axis.title.x = element_blank())
+
+ggsave('r_out/kd_wt-brmComplex-horizontal-plot-Symbol.png', width = 11, height = 7)
+
+```
+
+```{r plot-results-Dom-complex}
+#outdata %>%
+#  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024" & homozygous == T) %>%
+#  dplyr::group_by(symbol, line.x) %>%
+#  #dplyr::mutate(med = median(KDtoWT)) %>%
+#  ggplot(aes(KDtoWT, forcats::fct_reorder(grp.x, KDtoWT))) +
+#  geom_vline(xintercept = 1, color = "grey50") +
+#  geom_boxplot(aes(fill = dom_fill), outlier.shape = NA) +
+#  #geom_point(alpha = 0.6) +
+#  #geom_point(aes(fill = lethality), alpha = 0.8, shape = 21) +
+#  scale_y_discrete(position = 'right') +
+#  scale_x_continuous(trans = "log2") +
+#  #scale_x_continuous(limits = c(0, 7), breaks = c(-1:10)) +
+#  scale_fill_manual(values = c("White","Red")) +
+#  xlab("log2(KD/WT)") +
+#  ylab("brDisc KD/WT") +
+#  theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+#        legend.position = "none",
+#        axis.text.y = element_text(size = 10),
+#        axis.title.y = element_blank())
+#
+#ggsave('r_out/kd_wt-domComplex-plot.png', width = 6, height = 9)
+
+```
+
+
 

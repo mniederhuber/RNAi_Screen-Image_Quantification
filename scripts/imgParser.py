@@ -10,9 +10,16 @@ from skimage import filters, io, morphology, feature, img_as_ubyte
 from skimage.measure import label, regionprops
 from tifffile import imsave, imread
 
+### global variables ###
+
 #to do - make a config file that has these variables so nothing has to be changed in the python code
 image_directory = 'images'
 input_sheet = 'sheets/results.csv'
+resultsFile = False
+results = pd.DataFrame()
+
+
+### Functions ###
 
 def makeLineDic(sheet):
 	lut = {}
@@ -21,8 +28,22 @@ def makeLineDic(sheet):
 		lut[row.Line] = row.Symbol	
 	return lut
 
+
+#get all the file info and filepath
 def getMeta(imgDir, lineLUT):
+
+ #set resultsFile and oldResults as global variables so they can be used in the output function
+	global resultsFile
+	global oldResults
+
 	print('building meta...')
+
+	#check for existing results
+	if os.path.exists('output/resultsDF.csv'):
+		print('resultsDF detected...')
+		oldResults =	pd.read_csv('output/resultsDF.csv')	
+		resultsFile = True
+
 	for root, dirs, files in os.walk(imgDir):
 		for f in files:
 			if '.lif' in f and '.lifext' not in f and 'E93' not in f:
@@ -34,20 +55,17 @@ def getMeta(imgDir, lineLUT):
 					line = f.split('_')[0]
 				else:
 					line = f.split('.')[0]
+
 				symbol = lineLUT[line]
 				sampleID = '_'.join([symbol,line,date])
 				fp = os.path.abspath(os.path.join(root,f))
 
-#This currently doesn't work correctly because existing results file gets overwritten 
-#if file is skipped
-#				if os.path.exists('output/resultsDF.csv'):
-#					results =	pd.read_csv('output/resultsDF.csv')
-#					print(sampleID)
-#					if sampleID in list(results['sampleID']):
-#						print('file previously processed - skipping')
-#						continue
-#				else:
-#					print('new file')				
+			#check if the current file has already been processed by comparing to the existin resultsFile
+				if resultsFile and sampleID in list(oldResults['sampleID']):
+					print(f'{sampleID} previously processed - skipping')
+					continue
+
+				print(f'processing {sampleID}...')	
 
 				image = AICSImage(fp)
 			
@@ -78,7 +96,7 @@ def quantify(samples):
 				stack = image.shape[2]        
 				size = f"{image.shape[3]}x{image.shape[4]}"
 
-				print(f'processing {sampleID}')
+				print(f'{scene}')
 
 			#check that scene has all 3 channels (DAPI, GFP, tdTomato)
 				if image.shape[1] == 3:
@@ -139,7 +157,6 @@ def quantify(samples):
 						}
 
 def writeOut(results):
-		print('writing masks...')
 		for result in results:
 				io.imsave(f"output/maxProj/{result['sampleID']}_{result['scene']}_GFP_MAX.tiff", result['GFP_MAX'])
 				io.imsave(f"output/mask/{result['sampleID']}_{result['scene']}_GFP-MASK_MAX.tiff", result['GFP-mask'])
@@ -148,23 +165,31 @@ def writeOut(results):
 				io.imsave(f"output/mask/{result['sampleID']}_{result['scene']}_DAPI-MASK_MAX.tiff", result['DAPI-mask'])
 				io.imsave(f"output/maxProj/{result['sampleID']}_{result['scene']}_brDisc_MAX.tiff", result['brDisc_MAX'])
 				
-#				with open(f"output/pickles/{out['sampleID']}_{out['scene']}.pkl", 'wb') as f:
-#						pickle.dump({k:out[k] for k in ('symbol', 'line', 'date', 'sampleID', 'scene', 'shape', 'size', 'stack', 'gfp', 'brDisc', 'brDisc_gfp', 'brDisc_gfpNEG', 'KDtoWT')}, f)
 				yield {k:result[k] for k in ('symbol', 'line', 'date', 'sampleID', 'scene', 'shape', 'size', 'stack', 'gfp', 'brDisc', 'brDisc_gfp', 'brDisc_gfpNEG', 'KDtoWT')}
 				
 
+#combine all the dictionaries of results into a single dataframe for export, concat with existing resultsFile if it's there
 def concatDF(outs):
-		dflist = []
-		for out in outs:
-				dflist.append(out)
-		pd.DataFrame(dflist).to_csv('output/resultsDF.csv', index = False)
+	resultDics= []
+	for out in outs:
+		resultDics.append(out)
+	if resultsFile: 
+		outDF = pd.concat([oldResults, pd.DataFrame(resultDics)])
+	else:		
+		outDF = pd.DataFrame(resultDics)
+	print(outDF)
+	outDF.to_csv('output/resultsDF.csv', index = False)
 
+
+### Run the generators ###
+
+#make the line# look up table
 lineLUT = makeLineDic(input_sheet)
-#chain the generators
+
+#generator chain:
 meta = getMeta(image_directory, lineLUT)
 scenes = getScene(meta)
 results = quantify(scenes)
 outputs = writeOut(results)
 concatDF(outputs)
-#list(concatDF)	
 

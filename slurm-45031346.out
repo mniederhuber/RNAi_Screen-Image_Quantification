@@ -1,0 +1,17 @@
+building meta...
+resultsDF detected...
+Tip60_v110617_220224 previously processed - skipping
+Traceback (most recent call last):
+  File "scripts/imgParser.py", line 194, in <module>
+    concatDF(outputs)
+  File "scripts/imgParser.py", line 174, in concatDF
+    for out in outs:
+  File "scripts/imgParser.py", line 160, in writeOut
+    for result in results:
+  File "scripts/imgParser.py", line 89, in quantify
+    for sample in samples:
+  File "scripts/imgParser.py", line 83, in getScene
+    for sample in metas:
+  File "scripts/imgParser.py", line 59, in getMeta
+    symbol = lineLUT[line]
+KeyError: 'v108618'

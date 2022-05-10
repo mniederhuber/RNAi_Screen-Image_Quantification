@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/pine/scr/m/j/mjn15/RNAi_Screen-Image_Quantification/scripts/imgParser.py", line 4, in <module>
+    from aicsimageio import AICSImage
+ModuleNotFoundError: No module named 'aicsimageio'

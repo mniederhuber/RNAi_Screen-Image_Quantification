@@ -3,12 +3,24 @@
 library(magrittr)
 library(ggplot2)
 library(viridis)
+
+color_scale = c("#f0e932","#03d7fc","#1fb800", "#FFFFFF", "#f059a2")
 ```
 
 ```{r sheet_prep}
-brm_complex <- c('Bap111','brm','mor','Snr1')
+
+brm_complex <- c('Bap111','brm','mor','Snr1','Act5C','Bap55')
 pbap_complex <- c('polybromo', 'bap170')
 bap_complex <- c('osa')
+ino80 <- c('Arp5','Ino80','pho','Act5C')
+dom <- c('dom','Tip60','Nipped-A','pont','Reptin')
+atac <- c('Atac2','Atac3','D12','Wds','NC2beta')
+NURF <- c('E(bx)', 'Nurf-38','ISWI','Caf1-55')
+ACF <- c('Acf','Chrac-16')
+NURD <- c('Mi-2','MTA1-like','Caf1-55')
+NORC <- c('CtBP','Tou')
+demethyl <- c('Jarid2','lid','su(var)3-3')
+control <- c('lexA')
 
 dom_complex <- c('dom','Tip60','pont', 'rept','Nipped-A','Brd8')
 
@@ -17,17 +29,71 @@ outdata <- read.csv('../output/resultsDF.csv') %>%
                 complex = dplyr::case_when(symbol %in% brm_complex ~ '(p)bap',
                                            symbol %in% pbap_complex ~ 'pbap',
                                            symbol %in% bap_complex ~ 'bap',
-                                           T ~ 'other')) 
+                                           symbol %in% control ~ 'Negative-Control',
+                                           T ~ 'other'),
+                other_complex = dplyr::case_when(symbol %in% brm_complex ~ '(p)bap',
+                                           symbol %in% pbap_complex ~ 'pbap',
+                                           symbol %in% bap_complex ~ 'bap',
+                                           symbol %in% control ~ 'Negative-Control',
+                                           symbol %in% ino80 ~ 'Ino80',
+                                           symbol %in% dom ~ 'Domino',
+                                           symbol %in% atac ~ 'ATAC',
+                                           symbol %in% NURF ~ 'NURF',
+                                           symbol %in% ACF ~ 'ACF',
+                                           symbol %in% NURD ~ 'NURD',
+                                           symbol %in% NORC ~ 'NORC',
+                                           symbol %in% demethyl ~ 'Demethylase',
+                                           T ~ 'other'))
+
+outdata 
+```
+```{r summary}
+
+lines <- length(unique(outdata$line))
+genes <- length(unique(outdata$symbol))
+complexes <- length(unique(outdata$other_complex))
+
+#average number of wings per line
+outdata %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::count(line) %>%
+  dplyr::ungroup() %>% 
+  dplyr::summarise(mean = mean(n))
 
 
-outdata
+#write csv with just the tested lines for reference
+write.table(unique(outdata$line), "r_out/tested-lines.csv", quote = F, col.names = F, row.names = F, sep = ',')
+#unique(outdata$line)
+
+less_than_4_wings <- outdata %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::count(line) %>%
+  dplyr::arrange(n) %>%
+  dplyr::filter(n <= 4)
+  
+write.table(less_than_4_wings, "r_out/lines_with_less_than_4_wings.csv", row.names = F, quote = F,sep = ',')
+
+
+summary_df <- data.frame('Lines' = lines,
+                         'Genes' = genes,
+                         'Complexes' = complexes)
+
+summary_grob <- gridExtra::tableGrob(summary_df, rows = NULL, )
+h = grid::convertHeight(sum(summary_grob$heights), "in", T)
+w = grid::convertHeight(sum(summary_grob$widths), "in", T)
+ggplot2::ggsave("r_out/summary_table.pdf", summary_grob, width = w, height = h)
+
+
 ```
 
 
 ```{r plot-results-brm-complex}
-color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
+# filter out any images with stack # <10, GFP < 8 (no GFP driver), and only use 1024x1024 dimensions
+
 outdata %>%
-  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::filter(stack >= 10 &
+                  gfp >= 8 &
+                  size == "1024x1024") %>%
   dplyr::group_by(symbol, line) %>%
   dplyr::mutate(med = median(KDtoWT)) %>%
   ggplot(aes(KDtoWT, forcats::fct_reorder(id, KDtoWT))) +
@@ -48,9 +114,8 @@ ggsave('r_out/kd_wt-brmComplex-plot.png', width = 7, height = 9)
 ```
 
 ```{r plot-results-brm-complex-V2}
-color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
 outdata %>%
-  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::filter(stack >= 10 & gfp >= 8 & size == "1024x1024") %>%
   dplyr::group_by(symbol, line) %>%
   dplyr::mutate(med = median(KDtoWT)) %>%
   ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
@@ -59,23 +124,25 @@ outdata %>%
  # scale_y_discrete(position = 'right') +
   scale_y_continuous(trans = "log2") +
   scale_fill_manual(values = color_scale) +
-  ylab("log2(KD/WT)") +
-  xlab("brDisc KD/WT") +
+  ylab("log2 (brDisc KD/WT)") +
+  annotation_custom(summary_grob, xmin = 0, xmax = 20, ymin = 5, ymax = 0) +
+#  xlab("brDisc KD/WT") +
   theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
 #        legend.position = "none",
         axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
-        axis.title.x = element_blank())
+        axis.title.x = element_blank(),
+        panel.background = element_rect(fill = 'white', colour = 'grey10'),
+        panel.grid.major  = element_line(color = 'grey90'))
 
-ggsave('r_out/kd_wt-brmComplex-horizontal-plot.png', width = 11, height = 7)
+ggsave('r_out/kd_wt-brmComplex-horizontal-plot.png', width = 11, height = 5)
 
 ```
 ```{r}
 
 
 
-color_scale = c("#f0e932","#03d7fc", "#FFFFFF", "#f059a2")
 outdata %>%
-  dplyr::filter(stack >= 10 & gfp >= 10 & size == "1024x1024") %>%
+  dplyr::filter(stack >= 10 & gfp >= 5 & size == "1024x1024") %>%
   dplyr::group_by(symbol, line) %>%
   dplyr::mutate(med = median(KDtoWT)) %>%
   ggplot(aes(forcats::fct_reorder(symbol, KDtoWT), KDtoWT)) +

@@ -21,12 +21,21 @@ NURD <- c('Mi-2','MTA1-like','Caf1-55')
 NORC <- c('CtBP','Tou')
 demethyl <- c('Jarid2','lid','su(var)3-3')
 control <- c('lexA')
+SNF2_like = c('kis','okr','Chd1','Etl1')
+
+nucleosome_remod <- c(brm_complex, pbap_complex, bap_complex, ino80, dom, atac, NURF, ACF, NURD, SNF2_like)
 
 dom_complex <- c('dom','Tip60','pont', 'rept','Nipped-A','Brd8')
 
 outdata <- read.csv('../output/resultsDF.csv') %>%
   dplyr::mutate(id = paste(symbol, line, sep = "_"),
-                complex = dplyr::case_when(symbol %in% brm_complex ~ '(p)bap',
+                nucleosome_remodeler = ifelse(symbol %in% nucleosome_remod, T, F),
+                Negcontrol = dplyr::case_when(symbol %in% control ~ 'Negative-Control',
+                                           T ~ 'test'),
+                complex_general = dplyr::case_when(symbol %in% brm_complex | symbol %in% pbap_complex | symbol %in% bap_complex ~ 'PBAP/BAP',
+                                                   symbol %in% control ~ 'Negative-Control',
+                                                   T ~ 'other'),
+                complex = dplyr::case_when(symbol %in% brm_complex ~ 'core',
                                            symbol %in% pbap_complex ~ 'pbap',
                                            symbol %in% bap_complex ~ 'bap',
                                            symbol %in% control ~ 'Negative-Control',
@@ -43,9 +52,32 @@ outdata <- read.csv('../output/resultsDF.csv') %>%
                                            symbol %in% NURD ~ 'NURD',
                                            symbol %in% NORC ~ 'NORC',
                                            symbol %in% demethyl ~ 'Demethylase',
-                                           T ~ 'other'))
+                                           T ~ 'other')) %>%
+  dplyr::group_by(id) %>%
+  dplyr::filter(!is.na(KDtoWT)) %>%
+  dplyr::mutate(avg = mean(KDtoWT)) %>%
+  dplyr::mutate(bap_hits = dplyr::case_when(avg > 1 & complex_general == 'PBAP/BAP' ~ 'Brahma Complex',
+                                            complex_general == 'Negative-Control' ~ 'Negative-Control',
+                                            T ~ 'other'))
 
-outdata 
+outdata %>% 
+  dplyr::select(date) %>%
+ unique() %>%
+  dplyr::arrange(date)
+
+
+nr <- outdata %>% dplyr::filter(nucleosome_remodeler | Negcontrol == 'Negative-Control')
+
+loose_ends <- nr %>% 
+  dplyr::select(id, date, scene, size) %>%
+  dplyr::filter(size == '1024x1024') %>%
+  dplyr::group_by(id) %>%
+  dplyr::count() %>%
+  dplyr::arrange(n) %>%
+  dplyr::filter(n <= 4) 
+
+write.csv(loose_ends, 'r_out/loose_ends.csv', quote = F, sep = ',', row.names = F, col.names = T)
+  
 ```
 ```{r summary}
 
@@ -114,6 +146,70 @@ ggsave('r_out/kd_wt-brmComplex-plot.png', width = 7, height = 9)
 ```
 
 ```{r plot-results-brm-complex-V2}
+
+outdata %>%
+  dplyr::filter(stack >= 10 & gfp >= 8 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::mutate(med = median(KDtoWT)) %>%
+  ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
+  geom_hline(yintercept = 1, color = "grey50") +
+  geom_boxplot(aes(fill = Negcontrol), outlier.shape = NA) +
+  scale_y_continuous(trans = "log2") +
+  scale_fill_manual(values = c('#1fb800','white')) +
+  ylab("log2 (brDisc KD/WT)") +
+  annotation_custom(summary_grob, xmin = 0, xmax = 20, ymin = 5, ymax = 0) +
+  theme(axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
+        axis.title.x = element_blank(),
+        panel.background = element_rect(fill = 'white', colour = 'grey10'),
+        panel.grid.major  = element_line(color = 'grey90'),
+        legend.title = element_blank())
+
+ggsave('r_out/kd_wt-brmComplex-horizontal-plot-BLANK.png', width = 11, height = 5)
+
+nr %>%
+  dplyr::filter(stack >= 10 & gfp >= 8 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::mutate(med = median(KDtoWT)) %>%
+  #ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
+  ggplot(aes(forcats::fct_reorder(id, KDtoWT),KDtoWT )) +
+  geom_hline(yintercept = 1, color = "grey50") +
+  #geom_boxplot(aes(fill = complex_general), outlier.shape = NA) +
+  geom_boxplot(aes(fill = bap_hits), outlier.shape = NA) +
+  scale_y_continuous(trans = "log2") +
+  scale_fill_manual(values = c("#66C2A6",'#F059A2','white')) +
+  #scale_fill_manual(values = c("#f059a2",'#1fb800','white')) +
+  ylab("log2 (brD KD/WT)") +
+#  annotation_custom(summary_grob, xmin = 10, xmax = 20, ymin = 5, ymax = 0) +
+  theme(axis.text.x = element_text(size = 8, angle = 90, hjust = 1, vjust = 0.5),
+        axis.title.x = element_blank(),
+        panel.background = element_rect(fill = 'white', colour = 'grey10'),
+        panel.grid.major  = element_line(color = 'grey90'),
+        legend.title = element_blank(),
+        legend.position = 'right')
+ggsave('r_out/kd_wt-brmComplex-horizontal-plot-GENERAL.png', width = 8, height = 3)
+
+nr %>%
+  dplyr::filter(stack >= 10 & gfp >= 8 & size == "1024x1024") %>%
+  dplyr::group_by(symbol, line) %>%
+  dplyr::mutate(med = median(KDtoWT)) %>%
+  #ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
+  ggplot(aes(KDtoWT, forcats::fct_reorder(id, KDtoWT))) +
+  geom_vline(xintercept = 1, color = "grey50") +
+  #geom_boxplot(aes(fill = complex_general), outlier.shape = NA) +
+  geom_boxplot(aes(fill = bap_hits), outlier.shape = NA) +
+  scale_x_continuous(trans = "log2") +
+  scale_fill_manual(values = c("#66C2A6",'#F059A2','white')) +
+  xlab("log2 (brDisc KD/WT)") +
+  #annotation_custom(summary_grob, xmin = 0, xmax = 20, ymin = 5, ymax = 0) +
+  theme(axis.title.y = element_blank(),
+        panel.background = element_rect(fill = 'white', colour = 'grey10'),
+        panel.grid.major  = element_line(color = 'grey90'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.key.size = unit(0.5, 'cm'))
+  NULL
+ggsave('r_out/kd_wt-brmComplex-vertical-plot-GENERAL.png', width = 5, height =7)
+
 outdata %>%
   dplyr::filter(stack >= 10 & gfp >= 8 & size == "1024x1024") %>%
   dplyr::group_by(symbol, line) %>%
@@ -121,18 +217,14 @@ outdata %>%
   ggplot(aes(forcats::fct_reorder(id, KDtoWT), KDtoWT)) +
   geom_hline(yintercept = 1, color = "grey50") +
   geom_boxplot(aes(fill = complex), outlier.shape = NA) +
- # scale_y_discrete(position = 'right') +
   scale_y_continuous(trans = "log2") +
   scale_fill_manual(values = color_scale) +
   ylab("log2 (brDisc KD/WT)") +
   annotation_custom(summary_grob, xmin = 0, xmax = 20, ymin = 5, ymax = 0) +
-#  xlab("brDisc KD/WT") +
-  theme(#axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
-#        legend.position = "none",
-        axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
+  theme(axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = 0.5),
         axis.title.x = element_blank(),
         panel.background = element_rect(fill = 'white', colour = 'grey10'),
-        panel.grid.major  = element_line(color = 'grey90'))
+        panel.grid.major  = element_line(color = 'grey90'), )
 
 ggsave('r_out/kd_wt-brmComplex-horizontal-plot.png', width = 11, height = 5)
 

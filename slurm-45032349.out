@@ -1,0 +1,106 @@
+building meta...
+resultsDF detected...
+Tip60_v110617_220224 previously processed - skipping
+polybromo_v108618_220310 previously processed - skipping
+polybromo_v108618_220310 previously processed - skipping
+Snr1_32372_210323 previously processed - skipping
+Act5C_42651_210323 previously processed - skipping
+osa_31266_210323 previously processed - skipping
+Nurf-38_31341_210505 previously processed - skipping
+Nup153_32837_210505 previously processed - skipping
+mor_34919_210422 previously processed - skipping
+Ino80_33708_210128 previously processed - skipping
+Chrac-16_63658_210128 previously processed - skipping
+pont_50972_210128 previously processed - skipping
+polybromo_32840_210128 previously processed - skipping
+dom_55917_210331 previously processed - skipping
+su(var)3-3_32853_210331 previously processed - skipping
+dom_40914_210331 previously processed - skipping
+dom_38941_210331 previously processed - skipping
+dom_34827_210331 previously processed - skipping
+dom_41674_210331 previously processed - skipping
+Hers_61858_210603 previously processed - skipping
+HmgD_77429_210603 previously processed - skipping
+D12_60872_210603 previously processed - skipping
+wds_32952_210603 previously processed - skipping
+Tip60_28563_210603 previously processed - skipping
+Brd8_67308_211015 previously processed - skipping
+Bap111_v104361_211112 previously processed - skipping
+Nipped-A_34849_211112 previously processed - skipping
+Arp5_33009_210512 previously processed - skipping
+Ino80_33708_210512 previously processed - skipping
+kis_34908_210512 previously processed - skipping
+Chd1_34665_210512 previously processed - skipping
+Nlp_33688_210304 previously processed - skipping
+Etl1_33891_210304 previously processed - skipping
+Gcn5_33981_210304 previously processed - skipping
+P32_34585_210304 previously processed - skipping
+E(bx)_33658_210304 previously processed - skipping
+okr_33707_210304 previously processed - skipping
+lid_28944_210423 previously processed - skipping
+Atac3_31154_210423 previously processed - skipping
+osa_38285_210423 previously processed - skipping
+osa_31266_210423 previously processed - skipping
+Mi-2_33419_210617 previously processed - skipping
+Mi-2_33419_210617 previously processed - skipping
+Snr1_32372_210617 previously processed - skipping
+Mi-2_51774_210617 previously processed - skipping
+MTA1-like_33745_210617 previously processed - skipping
+osa_31266_210421 previously processed - skipping
+processing lexA_67945_220421...
+a1
+b1
+c1
+d1
+e1
+f1
+TFAM_26744_210217 previously processed - skipping
+Nup153_30504_210217 previously processed - skipping
+polybromo_32840_210217 previously processed - skipping
+Atac3_31086_210217 previously processed - skipping
+Bap111_26218_210217 previously processed - skipping
+Jarid2_26184_210217 previously processed - skipping
+Bicra_42847_210707 previously processed - skipping
+Ada2b_31347_210228 previously processed - skipping
+pho_31609_210228 previously processed - skipping
+Dsp1_31960_210228 previously processed - skipping
+Atac2_53918_210527 previously processed - skipping
+Top1_55314_210527 previously processed - skipping
+ISWI_31111_210527 previously processed - skipping
+Caf1-55_31714_210527 previously processed - skipping
+Acf_31340_210527 previously processed - skipping
+brm_31712_210527 previously processed - skipping
+NC2beta_57421_210317 previously processed - skipping
+Snr1_67929_210317 previously processed - skipping
+Chrac-16_63658_210317 previously processed - skipping
+TFAM_57742_210317 previously processed - skipping
+Snr1_67929_210317 previously processed - skipping
+D12_65062_210317 previously processed - skipping
+Snr1_67929_210317 previously processed - skipping
+dom_55917_210317 previously processed - skipping
+Bap111_26218_210326 previously processed - skipping
+brm_34520_210326 previously processed - skipping
+Bap111_26218_210326 previously processed - skipping
+osa_31266_210326 previously processed - skipping
+polybromo_32840_210326 previously processed - skipping
+mor_v6969_210714 previously processed - skipping
+osa_v330350_210714 previously processed - skipping
+Snr1_v108599_210714 previously processed - skipping
+MTA1-like_34624_210714 previously processed - skipping
+Jarid2_32891_210506 previously processed - skipping
+CG12659_31962_210506 previously processed - skipping
+Mtor_32941_210506 previously processed - skipping
+   symbol     line    date  ... brDisc_gfp brDisc_gfpNEG    KDtoWT
+0   Tip60  v110617  220224  ...  16.745308     16.135397  1.037800
+1   Tip60  v110617  220224  ...  10.929625     10.303129  1.060806
+2   Tip60  v110617  220224  ...  17.979448     14.174761  1.268413
+3   Tip60  v110617  220224  ...  10.691166      8.340856  1.281783
+4   Tip60  v110617  220224  ...  12.191525     10.465573  1.164917
+..    ...      ...     ...  ...        ...           ...       ...
+1    lexA    67945  220421  ...   8.750247      9.131941  0.958202
+2    lexA    67945  220421  ...   9.025246      8.231558  1.096420
+3    lexA    67945  220421  ...  10.319204     10.807640  0.954806
+4    lexA    67945  220421  ...   8.633920      8.673572  0.995428
+5    lexA    67945  220421  ...   9.761198      8.638373  1.129981
+
+[413 rows x 13 columns]
